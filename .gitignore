@@ -1,0 +1,15 @@
+node_modules
+.DS_Store
+
+dist
+**/src/generated
+
+/.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+/.pnp.*
+
+/.jest
+
+.idea

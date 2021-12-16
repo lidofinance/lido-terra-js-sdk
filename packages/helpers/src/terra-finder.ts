@@ -1,0 +1,15 @@
+import { NETWORKS } from '@lido-terra-sdk/constants';
+
+export enum TerraEntities {
+  Tx = 'tx',
+  Address = 'address',
+  Block = 'block',
+}
+
+export const getTerraFinderLink = (
+  entity: TerraEntities,
+  network: NETWORKS,
+  id: string,
+): string => {
+  return `https://finder.terra.money/${network}/${entity}/${id}`;
+};

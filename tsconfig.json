@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "esnext"],
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "target": "es6"
+  },
+  "include": ["**/src/**/*"],
+  "exclude": ["node_modules"]
+}

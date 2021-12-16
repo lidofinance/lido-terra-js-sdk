@@ -1,0 +1,19 @@
+{
+  "name": "@lido-terra-sdk/facade",
+  "version": "0.0.0-semantic-release",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "@terra-money/terra.js": "^3.0.1",
+    "assert-ts": "^0.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.11"
+  }
+}
