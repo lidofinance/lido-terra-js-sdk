@@ -1,13 +1,6 @@
 import { NETWORK } from '@lido-terra-sdk/constants';
-import {
-  AccAddress,
-  Denom,
-  Int,
-  LCDClient,
-  MsgExecuteContract,
-} from '@terra-money/terra.js';
+import { AccAddress, Denom, Int, LCDClient } from '@terra-money/terra.js';
 import assert from 'assert-ts';
-import { toMicroString } from '@lido-terra-sdk/helpers';
 import { LidoTerraBaseContract } from './base';
 import { LidoTerraAddressProvider } from '../addressProvider';
 

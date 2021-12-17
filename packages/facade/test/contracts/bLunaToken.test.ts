@@ -7,8 +7,7 @@ describe('Facade / bLuna token', () => {
   let lcd: LCDClient;
   let contract: LidoTerraBLunaToken;
   let address: AccAddress;
-  let hub: AccAddress;
-  let token: AccAddress;
+
   beforeAll(async () => {
     const key = new MnemonicKey();
     address = key.accAddress;
@@ -17,9 +16,7 @@ describe('Facade / bLuna token', () => {
       chainID: CHAIN.testnet.bombay12,
     });
     const addressProvider = new LidoTerraAddressProvider(NETWORK.TESTNET, lcd);
-    const addresses = await addressProvider.getAddresses();
-    hub = addresses.hub;
-    token = addresses.blunaTokenContract;
+
     contract = new LidoTerraBLunaToken(NETWORK.TESTNET, lcd, addressProvider);
   });
 

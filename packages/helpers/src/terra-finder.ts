@@ -1,4 +1,4 @@
-import { NETWORKS } from '@lido-terra-sdk/constants';
+import { NETWORK } from '@lido-terra-sdk/constants';
 
 export enum TerraEntities {
   Tx = 'tx',
@@ -8,7 +8,7 @@ export enum TerraEntities {
 
 export const getTerraFinderLink = (
   entity: TerraEntities,
-  network: NETWORKS,
+  network: NETWORK,
   id: string,
 ): string => {
   return `https://finder.terra.money/${network}/${entity}/${id}`;
