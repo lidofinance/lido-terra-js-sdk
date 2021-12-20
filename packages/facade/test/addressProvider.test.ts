@@ -16,7 +16,7 @@ describe('Facade / AddressProvider', () => {
     }));
     lcd = new LCDClient({
       URL: NETWORK_URL[NETWORK.TESTNET],
-      chainID: CHAIN.testnet.bombay12,
+      chainID: CHAIN[NETWORK.TESTNET].BOMBAY12,
     });
   });
 

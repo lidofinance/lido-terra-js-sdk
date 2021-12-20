@@ -13,3 +13,4 @@ dist
 /.jest
 
 .idea
+yarn-error.log

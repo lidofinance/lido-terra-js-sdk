@@ -18,7 +18,7 @@ describe('Facade / rewards', () => {
     address = key.accAddress;
     lcd = new LCDClient({
       URL: NETWORK_URL[NETWORK.TESTNET],
-      chainID: CHAIN.testnet.bombay12,
+      chainID: CHAIN[NETWORK.TESTNET].BOMBAY12,
     });
     const addressProvider = new LidoTerraAddressProvider(NETWORK.TESTNET, lcd);
     contract = new LidoTerraRewards(NETWORK.TESTNET, lcd, addressProvider);
