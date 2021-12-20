@@ -10,7 +10,6 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch --coverage",
     "lint": "eslint --ext ts,tsx .",
-    "postinstall": "husky install",
     "clean": "rimraf ./packages/**/dist"
   },
   "sideEffects": false,
