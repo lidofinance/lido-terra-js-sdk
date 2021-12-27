@@ -22,7 +22,7 @@ yarn add @lido-terra-sdk/facade
 ## Address provider
 
 ```ts
-import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants/src';
+import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants';
 import { LCDClient } from '@terra-money/terra.js';
 import { LidoTerraAddressProvider } from '@lido-terra-sdk/facade';
 const lcd = new LCDClient({
@@ -41,7 +41,7 @@ const { hub, airdropRegistryContract } = await addressProvider.getAddresses();
 ### Hub
 
 ```ts
-import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants/src';
+import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants';
 import { LCDClient } from '@terra-money/terra.js';
 import { LidoTerraAddressProvider } from '@lido-terra-sdk/facade';
 
@@ -57,7 +57,7 @@ const config = await contract.getConfig();
 ### bLuna token
 
 ```ts
-import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants/src';
+import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants';
 import { LCDClient } from '@terra-money/terra.js';
 import {
   LidoTerraAddressProvider,
@@ -76,7 +76,7 @@ const config = await contract.getConfig();
 ### stLuna token
 
 ```ts
-import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants/src';
+import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants';
 import { LCDClient } from '@terra-money/terra.js';
 import {
   LidoTerraAddressProvider,
@@ -99,7 +99,7 @@ const config = await contract.getConfig();
 ### Validators registry
 
 ```ts
-import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants/src';
+import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants';
 import { LCDClient } from '@terra-money/terra.js';
 import {
   LidoTerraAddressProvider,
@@ -122,7 +122,7 @@ const config = await contract.getConfig();
 ### Rewards contract
 
 ```ts
-import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants/src';
+import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants';
 import { LCDClient } from '@terra-money/terra.js';
 import {
   LidoTerraAddressProvider,
@@ -141,7 +141,7 @@ const config = await contract.getConfig();
 ### Airdrop registry
 
 ```ts
-import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants/src';
+import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants';
 import { LCDClient } from '@terra-money/terra.js';
 import {
   LidoTerraAirdropRegistry,
