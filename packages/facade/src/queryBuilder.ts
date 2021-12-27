@@ -88,7 +88,7 @@ class LidoTerraQueryBuilder {
     return [new MsgExecuteContract(sender, contractAddress, unbondQuery)];
   }
 
-  async claimQuery(
+  async getClaimQuery(
     sender: AccAddress,
     claimable: FULL_COIN.UST | FULL_COIN.LUNA,
   ): Promise<MsgExecuteContract[]> {
@@ -108,7 +108,7 @@ class LidoTerraQueryBuilder {
     ];
   }
 
-  async convertQuery(
+  async getConvertQuery(
     sender: AccAddress,
     asset: ASSET,
     amount: string,

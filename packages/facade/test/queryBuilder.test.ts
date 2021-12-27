@@ -77,14 +77,14 @@ describe('Facade / queryBuilder', () => {
   });
 
   test('withdraw unbonded bluna', async () => {
-    const query = await querybuiler.claimQuery(address, FULL_COIN.LUNA);
+    const query = await querybuiler.getClaimQuery(address, FULL_COIN.LUNA);
     expect(JSON.stringify(query)).toEqual(
       `["{\\"@type\\":\\"/terra.wasm.v1beta1.MsgExecuteContract\\",\\"coins\\":[],\\"contract\\":\\"${hub}\\",\\"execute_msg\\":{\\"withdraw_unbonded\\":{}},\\"sender\\":\\"${address}\\"}"]`,
     );
   });
 
   test('claim bluna rewards (in UST)', async () => {
-    const query = await querybuiler.claimQuery(address, FULL_COIN.UST);
+    const query = await querybuiler.getClaimQuery(address, FULL_COIN.UST);
     expect(JSON.stringify(query)).toEqual(
       `["{\\"@type\\":\\"/terra.wasm.v1beta1.MsgExecuteContract\\",\\"coins\\":[],\\"contract\\":\\"${rewardContract}\\",\\"execute_msg\\":{\\"claim_rewards\\":{}},\\"sender\\":\\"${address}\\"}"]`,
     );
@@ -92,14 +92,14 @@ describe('Facade / queryBuilder', () => {
 
   test('claim wrong coin', async () => {
     await expect(() =>
-      querybuiler.claimQuery(address, 'WRONG' as FULL_COIN.LUNA),
+      querybuiler.getClaimQuery(address, 'WRONG' as FULL_COIN.LUNA),
     ).rejects.toEqual(
       new Error('Assert condition failed: Expected a Claimable but got WRONG'),
     );
   });
 
   test('convert bLuna into stLuna', async () => {
-    const query = await querybuiler.convertQuery(address, ASSET.BLUNA, '10');
+    const query = await querybuiler.getConvertQuery(address, ASSET.BLUNA, '10');
 
     expect(JSON.stringify(query)).toEqual(
       `["{\\"@type\\":\\"/terra.wasm.v1beta1.MsgExecuteContract\\",\\"coins\\":[],\\"contract\\":\\"${blunaToken}\\",\\"execute_msg\\":{\\"send\\":{\\"amount\\":\\"10000000\\",\\"contract\\":\\"${hub}\\",\\"msg\\":\\"eyJjb252ZXJ0Ijp7fX0=\\"}},\\"sender\\":\\"${address}\\"}"]`,
@@ -107,7 +107,11 @@ describe('Facade / queryBuilder', () => {
   });
 
   test('convert stLuna into bLuna', async () => {
-    const query = await querybuiler.convertQuery(address, ASSET.STLUNA, '10');
+    const query = await querybuiler.getConvertQuery(
+      address,
+      ASSET.STLUNA,
+      '10',
+    );
 
     expect(JSON.stringify(query)).toEqual(
       `["{\\"@type\\":\\"/terra.wasm.v1beta1.MsgExecuteContract\\",\\"coins\\":[],\\"contract\\":\\"${stlunaToken}\\",\\"execute_msg\\":{\\"send\\":{\\"amount\\":\\"10000000\\",\\"contract\\":\\"${hub}\\",\\"msg\\":\\"eyJjb252ZXJ0Ijp7fX0=\\"}},\\"sender\\":\\"${address}\\"}"]`,
@@ -116,7 +120,7 @@ describe('Facade / queryBuilder', () => {
 
   test('convert wrong asset', async () => {
     await expect(() =>
-      querybuiler.convertQuery(address, 'WRONG' as ASSET, '10'),
+      querybuiler.getConvertQuery(address, 'WRONG' as ASSET, '10'),
     ).rejects.toEqual(new Error('Asset is not supported'));
   });
 });
