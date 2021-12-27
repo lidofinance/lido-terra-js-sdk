@@ -56,7 +56,6 @@ describe('Helpers / coin', () => {
   });
 
   test('toMicroString', () => {
-    const dec = new Dec('10');
-    expect(toMicroString(dec)).toBe('10000000');
+    expect(toMicroString('10')).toBe('10000000');
   });
 });
