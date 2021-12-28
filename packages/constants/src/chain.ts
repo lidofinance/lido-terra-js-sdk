@@ -1,14 +1,20 @@
 import { NETWORK } from './network';
 
+export enum MAINNET_CHAINS {
+  COLUMBUS4 = 'columbus-4',
+  COLUMBUS5 = 'columbus-5',
+}
+
+export enum TESTNET_CHAINS {
+  BOMBAY11 = 'bombay-11',
+  BOMBAY12 = 'bombay-12',
+}
+
 export const CHAIN: {
-  [key in NETWORK]: Record<string, string>;
+  [key in NETWORK]: key extends NETWORK.MAINNET
+    ? typeof MAINNET_CHAINS
+    : typeof TESTNET_CHAINS;
 } = {
-  [NETWORK.MAINNET]: {
-    COLUMBUS4: 'columbus-4',
-    COLUMBUS5: 'columbus-5',
-  },
-  [NETWORK.TESTNET]: {
-    BOMBAY11: 'bombay-11',
-    BOMBAY12: 'bombay-12',
-  },
+  [NETWORK.MAINNET]: MAINNET_CHAINS,
+  [NETWORK.TESTNET]: TESTNET_CHAINS,
 };
