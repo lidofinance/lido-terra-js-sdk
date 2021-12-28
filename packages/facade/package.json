@@ -15,9 +15,9 @@
     "directory": "packages/facade"
   },
   "dependencies": {
-    "@terra-money/terra.js": "^3.0.1",
     "@lido-terra-sdk/constants": "workspace:*",
     "@lido-terra-sdk/helpers": "workspace:*",
+    "@terra-money/terra.js": "^3.0.1",
     "assert-ts": "^0.3.4"
   },
   "devDependencies": {

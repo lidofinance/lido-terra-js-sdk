@@ -11,7 +11,7 @@
     "directory": "packages/helpers"
   },
   "dependencies": {
-    "@terra-money/terra.js": "^3.0.1",
-    "@lido-terra-sdk/constants": "workspace:*"
+    "@lido-terra-sdk/constants": "workspace:*",
+    "@terra-money/terra.js": "^3.0.1"
   }
 }
