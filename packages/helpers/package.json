@@ -10,6 +10,10 @@
     "url": "https://github.com/lidofinance/lido-terra-js-sdk.git",
     "directory": "packages/helpers"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "dependencies": {
     "@lido-terra-sdk/constants": "workspace:*",
     "@terra-money/terra.js": "^3.0.1"

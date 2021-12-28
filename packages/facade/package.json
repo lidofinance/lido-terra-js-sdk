@@ -14,6 +14,10 @@
     "url": "https://github.com/lidofinance/lido-terra-js-sdk.git",
     "directory": "packages/facade"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "dependencies": {
     "@lido-terra-sdk/constants": "workspace:*",
     "@lido-terra-sdk/helpers": "workspace:*",
