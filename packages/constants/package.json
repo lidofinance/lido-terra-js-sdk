@@ -1,9 +1,14 @@
 {
   "name": "@lido-terra-sdk/constants",
-  "version": "0.0.0-semantic-release", 
+  "version": "0.0.0-semantic-release",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
-  "sideEffects": false
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lidofinance/lido-terra-js-sdk.git",
+    "directory": "packages/constants"
+  }
 }
