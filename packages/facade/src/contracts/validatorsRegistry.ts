@@ -1,5 +1,5 @@
 import { NETWORK } from '@lido-terra-sdk/constants';
-import { Int, LCDClient } from '@terra-money/terra.js';
+import { ContractInfo, Int, LCDClient } from '@terra-money/terra.js';
 import { LidoTerraAddressProvider } from '../addressProvider';
 import { LidoTerraBaseContract } from './base';
 
@@ -34,6 +34,13 @@ class LidoTerraValidatorsRegistry extends LidoTerraBaseContract {
       lcd,
       addressProvider || new LidoTerraAddressProvider(network, lcd),
     );
+  }
+
+  async getContractInfo(): Promise<ContractInfo> {
+    const { validatorsRegistryContract } =
+      await this.addressProvider.getAddresses();
+
+    return this.lcd.wasm.contractInfo(validatorsRegistryContract);
   }
 
   async getValidatorsForDelegation(): Promise<ValidatorForDelegation[]> {

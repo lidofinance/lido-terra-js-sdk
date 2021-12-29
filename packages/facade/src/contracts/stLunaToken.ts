@@ -1,5 +1,11 @@
 import { NETWORK } from '@lido-terra-sdk/constants';
-import { AccAddress, Denom, Int, LCDClient } from '@terra-money/terra.js';
+import {
+  AccAddress,
+  ContractInfo,
+  Denom,
+  Int,
+  LCDClient,
+} from '@terra-money/terra.js';
 import assert from 'assert-ts';
 import { LidoTerraBaseContract } from './base';
 import { LidoTerraAddressProvider } from '../addressProvider';
@@ -53,6 +59,12 @@ class LidoTerraStLunaToken extends LidoTerraBaseContract {
       lcd,
       addressProvider || new LidoTerraAddressProvider(network, lcd),
     );
+  }
+
+  async getContractInfo(): Promise<ContractInfo> {
+    const { stlunaTokenContract } = await this.addressProvider.getAddresses();
+
+    return this.lcd.wasm.contractInfo(stlunaTokenContract);
   }
 
   async getBalance(address: AccAddress): Promise<StLunaTokenBalance> {

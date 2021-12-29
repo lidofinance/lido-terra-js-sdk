@@ -25,6 +25,14 @@ describe('Facade / integration / airdrop registry', () => {
     expect(instance).toBeInstanceOf(LidoTerraAirdropRegistry);
   });
 
+  test('get contract info', async () => {
+    const info = await contract.getContractInfo();
+    expect(info.address).toBeDefined();
+    expect(Number.isFinite(info.code_id)).toBeTruthy();
+    expect(info.creator).toBeDefined();
+    expect(info.init_msg).toBeDefined();
+  });
+
   test('get config', async () => {
     const response = await contract.getConfig();
     expect(AccAddress.validate(response.owner)).toBeTruthy();
@@ -99,3 +107,6 @@ describe('Facade / unit / airdrop registry', () => {
     ).toBeTruthy();
   });
 });
+function ContractInfo(ContractInfo: any) {
+  throw new Error('Function not implemented.');
+}

@@ -1,5 +1,10 @@
 import { NETWORK } from '@lido-terra-sdk/constants';
-import { AccAddress, Dec, LCDClient } from '@terra-money/terra.js';
+import {
+  AccAddress,
+  ContractInfo,
+  Dec,
+  LCDClient,
+} from '@terra-money/terra.js';
 import { LidoTerraAddressProvider } from '../addressProvider';
 import { LidoTerraBaseContract } from './base';
 
@@ -54,6 +59,13 @@ class LidoTerraAirdropRegistry extends LidoTerraBaseContract {
       lcd,
       addressProvider || new LidoTerraAddressProvider(network, lcd),
     );
+  }
+
+  async getContractInfo(): Promise<ContractInfo> {
+    const { airdropRegistryContract } =
+      await this.addressProvider.getAddresses();
+
+    return this.lcd.wasm.contractInfo(airdropRegistryContract);
   }
 
   async getConfig(): Promise<AirdropRegistryConfig> {

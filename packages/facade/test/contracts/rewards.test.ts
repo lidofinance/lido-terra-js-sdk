@@ -29,6 +29,14 @@ describe('Facade / rewards', () => {
     expect(instance).toBeInstanceOf(LidoTerraRewards);
   });
 
+  test('get contract info', async () => {
+    const info = await contract.getContractInfo();
+    expect(info.address).toBeDefined();
+    expect(Number.isFinite(info.code_id)).toBeTruthy();
+    expect(info.creator).toBeDefined();
+    expect(info.init_msg).toBeDefined();
+  });
+
   test('get config', async () => {
     const result = await contract.getConfig();
     expect(result.hubContract).toBeDefined();
@@ -64,3 +72,6 @@ describe('Facade / rewards', () => {
     expect(result.holders[0].pendingRewards).toBeInstanceOf(Dec);
   });
 });
+function ContractInfo(ContractInfo: any) {
+  throw new Error('Function not implemented.');
+}

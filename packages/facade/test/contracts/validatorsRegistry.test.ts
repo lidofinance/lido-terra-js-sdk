@@ -25,6 +25,14 @@ describe('Facade / validators registry', () => {
     expect(instance).toBeInstanceOf(LidoTerraValidatorsRegistry);
   });
 
+  test('get contract info', async () => {
+    const info = await contract.getContractInfo();
+    expect(info.address).toBeDefined();
+    expect(Number.isFinite(info.code_id)).toBeTruthy();
+    expect(info.creator).toBeDefined();
+    expect(info.init_msg).toBeDefined();
+  });
+
   test('get config', async () => {
     const response = await contract.getConfig();
     expect(response.owner.length > 0).toBeTruthy();

@@ -25,6 +25,14 @@ describe('Facade / bLuna token', () => {
     expect(instance).toBeInstanceOf(LidoTerraBLunaToken);
   });
 
+  test('get contract info', async () => {
+    const info = await contract.getContractInfo();
+    expect(info.address).toBeDefined();
+    expect(Number.isFinite(info.code_id)).toBeTruthy();
+    expect(info.creator).toBeDefined();
+    expect(info.init_msg).toBeDefined();
+  });
+
   test('get token info', async () => {
     const out = await contract.getBalance(address);
     expect(out.balance).toBeInstanceOf(Int);
@@ -61,3 +69,6 @@ describe('Facade / bLuna token', () => {
     expect(first.accounts[1] === out.accounts[0]).toBeTruthy();
   });
 });
+function ContractInfo(ContractInfo: any) {
+  throw new Error('Function not implemented.');
+}

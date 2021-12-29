@@ -29,6 +29,14 @@ describe('Facade / Integration / LidoTerraHub', () => {
     expect(instance).toBeInstanceOf(LidoTerraHub);
   });
 
+  test('get contract info', async () => {
+    const info = await contract.getContractInfo();
+    expect(info.address).toBeDefined();
+    expect(Number.isFinite(info.code_id)).toBeTruthy();
+    expect(info.creator).toBeDefined();
+    expect(info.init_msg).toBeDefined();
+  });
+
   test('get config', async () => {
     const config = await contract.getConfig();
     expect(AccAddress.validate(config.owner)).toBeTruthy();
@@ -151,3 +159,6 @@ describe('Facade / Unit / LidoTerraHub', () => {
     expect(request.stLunaAmount).toEqual(new Int(3));
   });
 });
+function ContractInfo(ContractInfo: any) {
+  throw new Error('Function not implemented.');
+}

@@ -1,5 +1,12 @@
 import { NETWORK } from '@lido-terra-sdk/constants/src';
-import { AccAddress, Dec, Denom, Int, LCDClient } from '@terra-money/terra.js';
+import {
+  AccAddress,
+  ContractInfo,
+  Dec,
+  Denom,
+  Int,
+  LCDClient,
+} from '@terra-money/terra.js';
 import { LidoTerraBaseContract } from './base';
 import assert from 'assert-ts';
 import { LidoTerraAddressProvider } from '../addressProvider';
@@ -132,6 +139,12 @@ class LidoTerraHub extends LidoTerraBaseContract {
       lcd,
       addressProvider || new LidoTerraAddressProvider(network, lcd),
     );
+  }
+
+  async getContractInfo(): Promise<ContractInfo> {
+    const { hub } = await this.addressProvider.getAddresses();
+
+    return this.lcd.wasm.contractInfo(hub);
   }
 
   async getConfig(): Promise<HubContract> {
