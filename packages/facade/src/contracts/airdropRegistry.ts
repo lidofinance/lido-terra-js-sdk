@@ -47,9 +47,13 @@ class LidoTerraAirdropRegistry extends LidoTerraBaseContract {
   constructor(
     network: NETWORK,
     lcd: LCDClient,
-    addressProvider: LidoTerraAddressProvider,
+    addressProvider?: LidoTerraAddressProvider,
   ) {
-    super(network, lcd, addressProvider);
+    super(
+      network,
+      lcd,
+      addressProvider || new LidoTerraAddressProvider(network, lcd),
+    );
   }
 
   async getConfig(): Promise<AirdropRegistryConfig> {

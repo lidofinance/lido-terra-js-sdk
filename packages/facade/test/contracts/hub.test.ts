@@ -24,6 +24,11 @@ describe('Facade / Integration / LidoTerraHub', () => {
     contract = new LidoTerraHub(NETWORK.TESTNET, lcd, addressProvider);
   });
 
+  test('construct with empty addressProvider', () => {
+    const instance = new LidoTerraHub(NETWORK.TESTNET, lcd);
+    expect(instance).toBeInstanceOf(LidoTerraHub);
+  });
+
   test('get config', async () => {
     const config = await contract.getConfig();
     expect(AccAddress.validate(config.owner)).toBeTruthy();

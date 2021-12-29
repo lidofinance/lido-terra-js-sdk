@@ -18,6 +18,11 @@ describe('Facade / stLuna Token', () => {
     contract = new LidoTerraStLunaToken(NETWORK.TESTNET, lcd, addressProvider);
   });
 
+  test('construct with empty addressProvider', () => {
+    const instance = new LidoTerraStLunaToken(NETWORK.TESTNET, lcd);
+    expect(instance).toBeInstanceOf(LidoTerraStLunaToken);
+  });
+
   test('get balance', async () => {
     const response = await contract.getBalance(address);
     expect(response.balance).toBeInstanceOf(Int);

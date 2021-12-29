@@ -24,6 +24,11 @@ describe('Facade / rewards', () => {
     contract = new LidoTerraRewards(NETWORK.TESTNET, lcd, addressProvider);
   });
 
+  test('construct with empty addressProvider', () => {
+    const instance = new LidoTerraRewards(NETWORK.TESTNET, lcd);
+    expect(instance).toBeInstanceOf(LidoTerraRewards);
+  });
+
   test('get config', async () => {
     const result = await contract.getConfig();
     expect(result.hubContract).toBeDefined();

@@ -20,6 +20,11 @@ describe('Facade / bLuna token', () => {
     contract = new LidoTerraBLunaToken(NETWORK.TESTNET, lcd, addressProvider);
   });
 
+  test('construct with empty addressProvider', () => {
+    const instance = new LidoTerraBLunaToken(NETWORK.TESTNET, lcd);
+    expect(instance).toBeInstanceOf(LidoTerraBLunaToken);
+  });
+
   test('get token info', async () => {
     const out = await contract.getBalance(address);
     expect(out.balance).toBeInstanceOf(Int);

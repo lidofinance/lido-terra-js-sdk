@@ -20,6 +20,11 @@ describe('Facade / validators registry', () => {
     );
   });
 
+  test('construct with empty addressProvider', () => {
+    const instance = new LidoTerraValidatorsRegistry(NETWORK.TESTNET, lcd);
+    expect(instance).toBeInstanceOf(LidoTerraValidatorsRegistry);
+  });
+
   test('get config', async () => {
     const response = await contract.getConfig();
     expect(response.owner.length > 0).toBeTruthy();

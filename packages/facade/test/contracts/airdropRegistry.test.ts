@@ -20,6 +20,11 @@ describe('Facade / integration / airdrop registry', () => {
     );
   });
 
+  test('construct with empty addressProvider', () => {
+    const instance = new LidoTerraAirdropRegistry(NETWORK.TESTNET, lcd);
+    expect(instance).toBeInstanceOf(LidoTerraAirdropRegistry);
+  });
+
   test('get config', async () => {
     const response = await contract.getConfig();
     expect(AccAddress.validate(response.owner)).toBeTruthy();
