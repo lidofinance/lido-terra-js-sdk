@@ -107,6 +107,3 @@ describe('Facade / unit / airdrop registry', () => {
     ).toBeTruthy();
   });
 });
-function ContractInfo(ContractInfo: any) {
-  throw new Error('Function not implemented.');
-}

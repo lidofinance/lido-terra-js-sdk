@@ -69,6 +69,3 @@ describe('Facade / bLuna token', () => {
     expect(first.accounts[1] === out.accounts[0]).toBeTruthy();
   });
 });
-function ContractInfo(ContractInfo: any) {
-  throw new Error('Function not implemented.');
-}

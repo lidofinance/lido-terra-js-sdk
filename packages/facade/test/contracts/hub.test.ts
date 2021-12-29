@@ -159,6 +159,3 @@ describe('Facade / Unit / LidoTerraHub', () => {
     expect(request.stLunaAmount).toEqual(new Int(3));
   });
 });
-function ContractInfo(ContractInfo: any) {
-  throw new Error('Function not implemented.');
-}

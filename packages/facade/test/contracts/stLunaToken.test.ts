@@ -70,6 +70,3 @@ describe('Facade / stLuna Token', () => {
     expect(response.accounts[0]).toEqual(first.accounts[1]);
   });
 });
-function ContractInfo(ContractInfo: any) {
-  throw new Error('Function not implemented.');
-}

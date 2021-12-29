@@ -72,6 +72,3 @@ describe('Facade / rewards', () => {
     expect(result.holders[0].pendingRewards).toBeInstanceOf(Dec);
   });
 });
-function ContractInfo(ContractInfo: any) {
-  throw new Error('Function not implemented.');
-}
