@@ -2,6 +2,11 @@ import { CHAIN, NETWORK, NETWORK_URL } from '@lido-terra-sdk/constants';
 import { AccAddress, Dec, LCDClient } from '@terra-money/terra.js';
 import { LidoTerraAddressProvider } from '../../src/addressProvider';
 import { LidoTerraAirdropRegistry } from '../../src/contracts';
+class EmptyAddressProvider {
+  getAddresses() {
+    return {};
+  }
+}
 
 describe('Facade / integration / airdrop registry', () => {
   let lcd: LCDClient;
@@ -33,12 +38,34 @@ describe('Facade / integration / airdrop registry', () => {
     expect(info.init_msg).toBeDefined();
   });
 
+  test('get contract info with empty contract address', async () => {
+    const instance = new LidoTerraAirdropRegistry(
+      NETWORK.TESTNET,
+      lcd,
+      new EmptyAddressProvider() as LidoTerraAddressProvider,
+    );
+    await expect(instance.getContractInfo()).rejects.toThrow(
+      'AirdropRegistry contract not found',
+    );
+  });
+
   test('get config', async () => {
     const response = await contract.getConfig();
     expect(AccAddress.validate(response.owner)).toBeTruthy();
     expect(AccAddress.validate(response.hubContract)).toBeTruthy();
     expect(AccAddress.validate(response.rewardContract)).toBeTruthy();
     expect(response.airdropTokens).toHaveLength(2);
+  });
+
+  test('get config with empty contract address', async () => {
+    const instance = new LidoTerraAirdropRegistry(
+      NETWORK.TESTNET,
+      lcd,
+      new EmptyAddressProvider() as LidoTerraAddressProvider,
+    );
+    await expect(instance.getConfig()).rejects.toThrow(
+      'AirdropRegistry contract not found',
+    );
   });
 
   test('get airdrop info', async () => {
@@ -62,6 +89,17 @@ describe('Facade / integration / airdrop registry', () => {
       response.airdropInfo[0].info.swapMaxSpread instanceof Dec ||
         response.airdropInfo[0].info.swapMaxSpread === null,
     ).toBeTruthy();
+  });
+
+  test('get airdropInfo with empty contract address', async () => {
+    const instance = new LidoTerraAirdropRegistry(
+      NETWORK.TESTNET,
+      lcd,
+      new EmptyAddressProvider() as LidoTerraAddressProvider,
+    );
+    await expect(instance.getAirdropInfo()).rejects.toThrow(
+      'AirdropRegistry contract not found',
+    );
   });
 });
 

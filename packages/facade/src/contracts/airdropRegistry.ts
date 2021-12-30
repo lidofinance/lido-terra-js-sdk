@@ -65,12 +65,21 @@ class LidoTerraAirdropRegistry extends LidoTerraBaseContract {
     const { airdropRegistryContract } =
       await this.addressProvider.getAddresses();
 
+    if (!airdropRegistryContract) {
+      throw new Error('AirdropRegistry contract not found');
+    }
+
     return this.lcd.wasm.contractInfo(airdropRegistryContract);
   }
 
   async getConfig(): Promise<AirdropRegistryConfig> {
     const { airdropRegistryContract } =
       await this.addressProvider.getAddresses();
+
+    if (!airdropRegistryContract) {
+      throw new Error('AirdropRegistry contract not found');
+    }
+
     const response = await this.query<AirdropRegistryConfigResponse>(
       airdropRegistryContract,
       {
@@ -89,6 +98,11 @@ class LidoTerraAirdropRegistry extends LidoTerraBaseContract {
   async getAirdropInfo(): Promise<AirdropInfo> {
     const { airdropRegistryContract } =
       await this.addressProvider.getAddresses();
+
+    if (!airdropRegistryContract) {
+      throw new Error('AirdropRegistry contract not found');
+    }
+
     const response = await this.query<AirdropInfoResponse>(
       airdropRegistryContract,
       {
