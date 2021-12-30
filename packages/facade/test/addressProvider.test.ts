@@ -3,6 +3,7 @@ import { LCDClient } from '@terra-money/terra.js';
 import { LidoTerraAddressProvider } from '../src/addressProvider';
 
 const contractQueryMock = jest.fn();
+const contractInfoMock = jest.fn();
 jest.mock('@terra-money/terra.js');
 
 describe('Facade / AddressProvider', () => {
@@ -12,6 +13,7 @@ describe('Facade / AddressProvider', () => {
     (LCDClient as jest.Mock).mockImplementation(() => ({
       wasm: {
         contractQuery: contractQueryMock,
+        contractInfo: contractInfoMock,
       },
     }));
     lcd = new LCDClient({
@@ -28,10 +30,16 @@ describe('Facade / AddressProvider', () => {
     contractQueryMock.mockResolvedValueOnce({
       other: 'one',
     });
+    contractInfoMock.mockResolvedValueOnce({
+      init_msg: {
+        bluna_reward_contract: 'some_bluna_reward_contract',
+      },
+    });
     const addressProvider = new LidoTerraAddressProvider(NETWORK.TESTNET, lcd);
     const addresses = await addressProvider.getAddresses();
-    expect(addresses).toEqual({
+    expect(addresses).toMatchObject({
       airdropRegistryContract: 'some_airdrop_registry_contract',
+      rewardContract: 'some_bluna_reward_contract',
       hub: expect.any(String),
     });
   });
@@ -43,10 +51,16 @@ describe('Facade / AddressProvider', () => {
     contractQueryMock.mockResolvedValueOnce({
       other: 'one',
     });
+    contractInfoMock.mockResolvedValueOnce({
+      init_msg: {
+        bluna_reward_contract: 'some_bluna_reward_contract_changed',
+      },
+    });
     const addressProvider = new LidoTerraAddressProvider(NETWORK.TESTNET, lcd);
     const addresses = await addressProvider.getAddresses();
-    expect(addresses).toEqual({
+    expect(addresses).toMatchObject({
       airdropRegistryContract: 'some_airdrop_registry_contract',
+      rewardContract: 'some_bluna_reward_contract',
       hub: expect.any(String),
     });
   });

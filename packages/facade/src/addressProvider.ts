@@ -17,7 +17,7 @@ export type AddressConfig = {
   validatorsRegistryContract: string;
   blunaTokenContract: string;
   stlunaTokenContract: string;
-  airdropRegistryContract: string;
+  airdropRegistryContract: string | null;
 };
 
 export type AirdropRegistryResponse = {
@@ -54,15 +54,16 @@ class LidoTerraAddressProvider {
       },
     );
 
-    const airDropRegistryConfig =
-      await this.lcd.wasm.contractQuery<AirdropRegistryResponse>(
-        hubConfig.airdrop_registry_contract,
-        { config: {} },
-      );
+    const rewardDispatcherContractInfo = await this.lcd.wasm.contractInfo(
+      hubConfig.reward_dispatcher_contract,
+    );
+
+    const rewardContract = rewardDispatcherContractInfo.init_msg
+      .bluna_reward_contract as string;
 
     const out = {
       hub: this.hub,
-      rewardContract: airDropRegistryConfig.reward_contract,
+      rewardContract: rewardContract,
       rewardDispatcherContract: hubConfig.reward_dispatcher_contract,
       validatorsRegistryContract: hubConfig.validators_registry_contract,
       blunaTokenContract: hubConfig.bluna_token_contract,
