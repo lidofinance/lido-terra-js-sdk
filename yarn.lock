@@ -1773,7 +1773,7 @@ __metadata:
   dependencies:
     "@lido-terra-sdk/constants": "workspace:*"
     "@lido-terra-sdk/helpers": "workspace:*"
-    "@terra-money/terra.js": ^3.0.1
+    "@terra-money/terra.js": ^3.0.4
     "@types/node": ^16.11.11
     assert-ts: ^0.3.4
   languageName: unknown
@@ -2440,6 +2440,27 @@ __metadata:
     utf-8-validate: ^5.0.5
     ws: ^7.5.5
   checksum: eb4ba8258364c7ab6a1515483bb2512db06d0c39ecce62ad085efc79b89a76181554b63488735d8d9a7d1df0cf8bf8c2dc6589b97fe69a58925e92374192c2d4
+  languageName: node
+  linkType: hard
+
+"@terra-money/terra.js@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "@terra-money/terra.js@npm:3.0.4"
+  dependencies:
+    "@terra-money/terra.proto": ^0.1.7
+    axios: ^0.24.0
+    bech32: ^2.0.0
+    bip32: ^2.0.6
+    bip39: ^3.0.3
+    bufferutil: ^4.0.3
+    decimal.js: ^10.2.1
+    jscrypto: ^1.0.1
+    readable-stream: ^3.6.0
+    secp256k1: ^4.0.2
+    tmp: ^0.2.1
+    utf-8-validate: ^5.0.5
+    ws: ^7.5.5
+  checksum: ecc7bf3a05e3f7b7c29f2e9c61630fffe88ca51e5b06923f8eccc479894c0cf4ac96dbf70deb6ddf35372c117a5a45b73108d71a96a14a846d66c55b0fd02b88
   languageName: node
   linkType: hard
 
