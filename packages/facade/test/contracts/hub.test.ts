@@ -73,7 +73,7 @@ describe('Facade / Integration / LidoTerraHub', () => {
     const out = await contract.getWithdrawableUnbonded(
       'terra1ahslh7784ga88tv7sreat8rnaun0lys06er2cd',
     );
-    expect(out.withdrawableUnbonded).toBeInstanceOf(Int);
+    expect(out.withdrawable).toBeInstanceOf(Int);
   });
 
   test('get all history', async () => {

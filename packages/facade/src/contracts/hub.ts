@@ -68,7 +68,7 @@ export type HubWithdrawableUnbondedResponse = {
 };
 
 export type HubWithdrawableUnbonded = {
-  withdrawableUnbonded: Int;
+  withdrawable: Int;
 };
 
 export type HubAllHistoryResponse = {
@@ -239,7 +239,7 @@ class LidoTerraHub extends LidoTerraBaseContract {
       withdrawable_unbonded: { address },
     });
     return {
-      withdrawableUnbonded: new Int(response.withdrawable),
+      withdrawable: new Int(response.withdrawable),
     };
   }
 
