@@ -1,12 +1,10 @@
 import { NETWORK } from './network';
 
 export enum MAINNET_CHAINS {
-  COLUMBUS4 = 'columbus-4',
   COLUMBUS5 = 'columbus-5',
 }
 
 export enum TESTNET_CHAINS {
-  BOMBAY11 = 'bombay-11',
   BOMBAY12 = 'bombay-12',
 }
 
