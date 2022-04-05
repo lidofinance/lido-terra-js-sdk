@@ -20,7 +20,7 @@
     "@babel/preset-typescript": "^7.15.0",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
-    "@qiwi/multi-semantic-release": "^3.17.0",
+    "@qiwi/multi-semantic-release": "^6.1.0",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@types/babel__core": "^7.1.16",
     "@types/babel__preset-env": "^7.9.2",
