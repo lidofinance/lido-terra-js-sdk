@@ -1773,7 +1773,7 @@ __metadata:
   dependencies:
     "@lido-terra-sdk/constants": "workspace:*"
     "@lido-terra-sdk/helpers": "workspace:*"
-    "@terra-money/terra.js": ^3.0.4
+    "@terra-money/terra.js": ^3.0.10
     "@types/node": ^16.11.11
     assert-ts: ^0.3.4
   languageName: unknown
@@ -2443,24 +2443,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terra-money/terra.js@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "@terra-money/terra.js@npm:3.0.4"
+"@terra-money/terra.js@npm:^3.0.10":
+  version: 3.0.10
+  resolution: "@terra-money/terra.js@npm:3.0.10"
   dependencies:
     "@terra-money/terra.proto": ^0.1.7
-    axios: ^0.24.0
+    axios: ^0.26.1
     bech32: ^2.0.0
-    bip32: ^2.0.6
+    bip32: ^3.0.1
     bip39: ^3.0.3
     bufferutil: ^4.0.3
     decimal.js: ^10.2.1
     jscrypto: ^1.0.1
     readable-stream: ^3.6.0
     secp256k1: ^4.0.2
+    tiny-secp256k1: ^2.2.1
     tmp: ^0.2.1
     utf-8-validate: ^5.0.5
     ws: ^7.5.5
-  checksum: ecc7bf3a05e3f7b7c29f2e9c61630fffe88ca51e5b06923f8eccc479894c0cf4ac96dbf70deb6ddf35372c117a5a45b73108d71a96a14a846d66c55b0fd02b88
+  checksum: 0d2be86622c0dc28d181022b7d38dd9f52ce97a7e770cf38b7e1678aeb36fee62dd2a6085777569b96acf44e6e7f71169042761f3cddee3b8d7952b96819e2cf
   languageName: node
   linkType: hard
 
@@ -3346,6 +3347,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.26.1":
+  version: 0.26.1
+  resolution: "axios@npm:0.26.1"
+  dependencies:
+    follow-redirects: ^1.14.8
+  checksum: d9eb58ff4bc0b36a04783fc9ff760e9245c829a5a1052ee7ca6013410d427036b1d10d04e7380c02f3508c5eaf3485b1ae67bd2adbfec3683704745c8d7a6e1a
+  languageName: node
+  linkType: hard
+
 "babel-jest@npm:^27.2.1, babel-jest@npm:^27.4.5":
   version: 27.4.5
   resolution: "babel-jest@npm:27.4.5"
@@ -3575,6 +3585,20 @@ __metadata:
     typeforce: ^1.11.5
     wif: ^2.0.6
   checksum: 1c654a93836d8ed0bf5aa18a9b7b8dc3fe65e6a607a736d2acdb7927276c03db4bf8068324b9907e362759f9307d8b2b61c2547c282a2bc5198305f5654ed554
+  languageName: node
+  linkType: hard
+
+"bip32@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "bip32@npm:3.0.1"
+  dependencies:
+    "@types/node": 10.12.18
+    bs58check: ^2.1.1
+    create-hash: ^1.2.0
+    create-hmac: ^1.1.7
+    typeforce: ^1.11.5
+    wif: ^2.0.6
+  checksum: 466402a538a9e74fbef35569f98a88256beac3f12e212b053f3d48a471ac0a1c61ca34746cab64a201a8ce10ca9cf136ddb6ece7ffe66d6865f54ea1ae202ef1
   languageName: node
   linkType: hard
 
@@ -5352,6 +5376,16 @@ __metadata:
     debug:
       optional: true
   checksum: 7fcdb089a733d2aa39041880790e9f772df009fcd0b243fee7e10acf0e14a8dab5208cf79eb1de35b9cc6033d4dde7f95becadfaa360c50d460b4c730b375e80
+  languageName: node
+  linkType: hard
+
+"follow-redirects@npm:^1.14.8":
+  version: 1.14.9
+  resolution: "follow-redirects@npm:1.14.9"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: f5982e0eb481818642492d3ca35a86989c98af1128b8e1a62911a3410621bc15d2b079e8170b35b19d3bdee770b73ed431a257ed86195af773771145baa57845
   languageName: node
   linkType: hard
 
@@ -10637,6 +10671,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-secp256k1@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "tiny-secp256k1@npm:2.2.1"
+  dependencies:
+    uint8array-tools: 0.0.7
+  checksum: 89b6cef4020e6d0c39bca5607ac73ba97a9172724574e09c46dc43443d99d03084774342c29e4f9c4af1b78e6357332e2f5551169957475d4c041575f5b98828
+  languageName: node
+  linkType: hard
+
 "tmp@npm:^0.2.1":
   version: 0.2.1
   resolution: "tmp@npm:0.2.1"
@@ -10964,6 +11007,13 @@ typescript@^4.4.3:
   bin:
     uglifyjs: bin/uglifyjs
   checksum: 0330eb11a36f4181b6d9a00336355989bfad9dd2203049fc63a59454b0d12337612272ad011bc571b9a382bf74d829ca20409ebfe089e38edb26cfc06bfa2cc9
+  languageName: node
+  linkType: hard
+
+"uint8array-tools@npm:0.0.7":
+  version: 0.0.7
+  resolution: "uint8array-tools@npm:0.0.7"
+  checksum: 6ffc45c7d2136757d63c6e556eb8345f908948618a9de37c805fec1249d989c265187b3fbef6cffc4ce5129083204829025b3c58800a0f24c8548e243d42ba13
   languageName: node
   linkType: hard
 
