@@ -27,7 +27,7 @@ export type AirdropRegistryResponse = {
 };
 
 const cache: Record<NETWORK, AddressConfig | null> = {
-  mainnet: null,
+  classic: null,
   testnet: null,
 };
 
