@@ -2278,9 +2278,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/multi-semantic-release@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "@qiwi/multi-semantic-release@npm:6.1.0"
+"@qiwi/multi-semantic-release@npm:^6.4.0":
+  version: 6.4.0
+  resolution: "@qiwi/multi-semantic-release@npm:6.4.0"
   dependencies:
     "@manypkg/get-packages": ^1.1.3
     "@semrel-extra/topo": ^1.3.0
@@ -2293,18 +2293,16 @@ __metadata:
     get-stream: ^6.0.1
     git-log-parser: ^1.2.0
     globby: 13.1.1
-    lodash: ^4.17.21
     lodash-es: ^4.17.21
     meow: ^10.1.2
     promise-events: ^0.2.4
     semantic-release: ^19.0.2
-    semver: ^7.3.5
+    semver: ^7.3.7
     signale: ^1.4.0
     stream-buffers: ^3.0.2
-    tempy: ^2.0.0
   bin:
     multi-semantic-release: bin/cli.js
-  checksum: d023c67e44954ae06f14ec0093ef63140399e765afdf20142223e50cc1846f2c0d4bb93a043a61a2fc8e7bc413586764e54aee879181428e419f301c0b2743d7
+  checksum: e271c012cbb08d0eabb54368db53c0df80a17d218d17bb0c530045d033e2d4e8e8762d4166f1d1f82e3b1d11223cc6ff1dda04cebe73e25fcdc6ca28c0e9e3d9
   languageName: node
   linkType: hard
 
@@ -4472,15 +4470,6 @@ __metadata:
   version: 2.0.0
   resolution: "crypto-random-string@npm:2.0.0"
   checksum: 0283879f55e7c16fdceacc181f87a0a65c53bc16ffe1d58b9d19a6277adcd71900d02bb2c4843dd55e78c51e30e89b0fec618a7f170ebcc95b33182c28f05fd6
-  languageName: node
-  linkType: hard
-
-"crypto-random-string@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "crypto-random-string@npm:4.0.0"
-  dependencies:
-    type-fest: ^1.0.1
-  checksum: 91f148f27bcc8582798f0fb3e75a09d9174557f39c3c40a89dd1bd70fb5a14a02548245aa26fa7d663c426ac5026f4729841231c84f9e30e8c8ece5e38656741
   languageName: node
   linkType: hard
 
@@ -7590,7 +7579,7 @@ __metadata:
     "@babel/preset-typescript": ^7.15.0
     "@commitlint/cli": ^13.1.0
     "@commitlint/config-conventional": ^13.1.0
-    "@qiwi/multi-semantic-release": ^6.1.0
+    "@qiwi/multi-semantic-release": ^6.4.0
     "@rollup/plugin-node-resolve": ^13.0.5
     "@types/babel__core": ^7.1.16
     "@types/babel__preset-env": ^7.9.2
@@ -10121,6 +10110,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semver@npm:^7.3.7":
+  version: 7.3.7
+  resolution: "semver@npm:7.3.7"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 2fa3e877568cd6ce769c75c211beaed1f9fce80b28338cadd9d0b6c40f2e2862bafd62c19a6cff42f3d54292b7c623277bcab8816a2b5521cf15210d43e75232
+  languageName: node
+  linkType: hard
+
 "set-blocking@npm:^2.0.0":
   version: 2.0.0
   resolution: "set-blocking@npm:2.0.0"
@@ -10691,19 +10691,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tempy@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "tempy@npm:2.0.0"
-  dependencies:
-    del: ^6.0.0
-    is-stream: ^3.0.0
-    temp-dir: ^2.0.0
-    type-fest: ^2.0.0
-    unique-string: ^3.0.0
-  checksum: b4834033830b9ca8876d1b2c886c43fcae4965cfe6a40baa28999d3f07b34de19d1f383e7829353d33b431c2a7f2393382df25de9ac65e1c2b6285f969c52d88
-  languageName: node
-  linkType: hard
-
 "terminal-link@npm:^2.0.0":
   version: 2.1.1
   resolution: "terminal-link@npm:2.1.1"
@@ -11059,13 +11046,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^2.0.0":
-  version: 2.12.2
-  resolution: "type-fest@npm:2.12.2"
-  checksum: ee69676da1f69d2b14bbec28c7b95220a3221ab14093f54bde179c59e185a80470859553eada535ec35d8637a245c2f0efe9d7c99cc46a43f3b4c7ef64db7957
-  languageName: node
-  linkType: hard
-
 "typedarray-dts@npm:^1.0.0":
   version: 1.0.0
   resolution: "typedarray-dts@npm:1.0.0"
@@ -11185,15 +11165,6 @@ typescript@^4.4.3:
   dependencies:
     crypto-random-string: ^2.0.0
   checksum: ef68f639136bcfe040cf7e3cd7a8dff076a665288122855148a6f7134092e6ed33bf83a7f3a9185e46c98dddc445a0da6ac25612afa1a7c38b8b654d6c02498e
-  languageName: node
-  linkType: hard
-
-"unique-string@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "unique-string@npm:3.0.0"
-  dependencies:
-    crypto-random-string: ^4.0.0
-  checksum: 1a1e2e7d02eab1bb10f720475da735e1990c8a5ff34edd1a3b6bc31590cb4210b7a1233d779360cc622ce11c211e43afa1628dd658f35d3e6a89964b622940df
   languageName: node
   linkType: hard
 
