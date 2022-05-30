@@ -1798,7 +1798,7 @@ __metadata:
   dependencies:
     "@lido-terra-sdk/constants": "workspace:*"
     "@lido-terra-sdk/helpers": "workspace:*"
-    "@terra-money/terra.js": ^3.1.2
+    "@terra-money/terra.js": ^3.0.10
     "@types/node": ^16.11.11
     assert-ts: ^0.3.4
   languageName: unknown
@@ -1809,7 +1809,7 @@ __metadata:
   resolution: "@lido-terra-sdk/helpers@workspace:packages/helpers"
   dependencies:
     "@lido-terra-sdk/constants": "workspace:*"
-    "@terra-money/terra.js": ^3.1.2
+    "@terra-money/terra.js": ^3.0.1
   languageName: unknown
   linkType: soft
 
@@ -2577,7 +2577,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terra-money/terra.js@npm:^3.1.2":
+"@terra-money/terra.js@npm:^3.0.1, @terra-money/terra.js@npm:^3.0.10":
   version: 3.1.2
   resolution: "@terra-money/terra.js@npm:3.1.2"
   dependencies:
