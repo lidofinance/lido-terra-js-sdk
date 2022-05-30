@@ -8,6 +8,6 @@ describe('Helpers / TerraFinder', () => {
       NETWORK.MAINNET,
       '0x0',
     );
-    expect(link).toEqual('https://finder.terra.money/mainnet/address/0x0');
+    expect(link).toEqual('https://finder.terra.money/classic/address/0x0');
   });
 });

@@ -6,6 +6,7 @@ export enum MAINNET_CHAINS {
 
 export enum TESTNET_CHAINS {
   BOMBAY12 = 'bombay-12',
+  PISCO = 'pisco',
 }
 
 export const CHAIN: {

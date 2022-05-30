@@ -21,7 +21,7 @@
   "dependencies": {
     "@lido-terra-sdk/constants": "workspace:*",
     "@lido-terra-sdk/helpers": "workspace:*",
-    "@terra-money/terra.js": "^3.0.10",
+    "@terra-money/terra.js": "^3.1.2",
     "assert-ts": "^0.3.4"
   },
   "devDependencies": {

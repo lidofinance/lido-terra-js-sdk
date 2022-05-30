@@ -15,7 +15,7 @@ describe('Facade / integration / airdrop registry', () => {
   beforeAll(async () => {
     lcd = new LCDClient({
       URL: NETWORK_URL[NETWORK.TESTNET],
-      chainID: CHAIN[NETWORK.TESTNET].BOMBAY12,
+      chainID: CHAIN[NETWORK.TESTNET].PISCO,
     });
     const addressProvider = new LidoTerraAddressProvider(NETWORK.TESTNET, lcd);
     contract = new LidoTerraAirdropRegistry(

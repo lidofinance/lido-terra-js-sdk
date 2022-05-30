@@ -1,11 +1,11 @@
 export enum NETWORK {
-  MAINNET = 'mainnet',
+  MAINNET = 'classic',
   TESTNET = 'testnet',
 }
 
 export const NETWORK_URL: {
   [key in NETWORK]: string;
 } = {
-  [NETWORK.MAINNET]: 'https://lcd.terra.dev',
-  [NETWORK.TESTNET]: 'https://bombay-lcd.terra.dev',
+  [NETWORK.MAINNET]: 'https://columbus-lcd.terra.dev',
+  [NETWORK.TESTNET]: 'https://pisco-lcd.terra.dev',
 };
