@@ -1547,6 +1547,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@improbable-eng/grpc-web@npm:^0.14.1":
+  version: 0.14.1
+  resolution: "@improbable-eng/grpc-web@npm:0.14.1"
+  dependencies:
+    browser-headers: ^0.4.1
+  peerDependencies:
+    google-protobuf: ^3.14.0
+  checksum: 8a3a6efe4ecb855ff636df634723e795ba97aeb2a3e1eeceb0a82086d1e27dfe1495915e09a29af8be4e4bde1fb0fd39b1d0608f3327d26f41d78df72fe77b53
+  languageName: node
+  linkType: hard
+
 "@isaacs/string-locale-compare@npm:*, @isaacs/string-locale-compare@npm:^1.1.0":
   version: 1.1.0
   resolution: "@isaacs/string-locale-compare@npm:1.1.0"
@@ -1787,7 +1798,7 @@ __metadata:
   dependencies:
     "@lido-terra-sdk/constants": "workspace:*"
     "@lido-terra-sdk/helpers": "workspace:*"
-    "@terra-money/terra.js": 3.0.0
+    "@terra-money/terra.js": 3.1.3
     "@types/node": ^16.11.11
     assert-ts: ^0.3.4
   languageName: unknown
@@ -1798,7 +1809,7 @@ __metadata:
   resolution: "@lido-terra-sdk/helpers@workspace:packages/helpers"
   dependencies:
     "@lido-terra-sdk/constants": "workspace:*"
-    "@terra-money/terra.js": 3.0.0
+    "@terra-money/terra.js": 3.1.3
   languageName: unknown
   linkType: soft
 
@@ -2555,12 +2566,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terra-money/terra.js@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@terra-money/terra.js@npm:3.0.0"
+"@terra-money/legacy.proto@npm:@terra-money/terra.proto@^0.1.7":
+  version: 0.1.7
+  resolution: "@terra-money/terra.proto@npm:0.1.7"
   dependencies:
-    "@terra-money/terra.proto": ^0.1.7
-    axios: ^0.24.0
+    google-protobuf: ^3.17.3
+    long: ^4.0.0
+    protobufjs: ~6.11.2
+  checksum: c6ad15f559008e5159137aea6fa0b3edd8699b2638cfbe7361c3b53a523bcf7b1f92e2977f4f022532f61a5f57a74bdd3e3db7d3eb5b97df743106aa40764bd0
+  languageName: node
+  linkType: hard
+
+"@terra-money/terra.js@npm:3.1.3":
+  version: 3.1.3
+  resolution: "@terra-money/terra.js@npm:3.1.3"
+  dependencies:
+    "@terra-money/legacy.proto": "npm:@terra-money/terra.proto@^0.1.7"
+    "@terra-money/terra.proto": ~2.0.0
+    axios: ^0.26.1
     bech32: ^2.0.0
     bip32: ^2.0.6
     bip39: ^3.0.3
@@ -2572,18 +2595,19 @@ __metadata:
     tmp: ^0.2.1
     utf-8-validate: ^5.0.5
     ws: ^7.5.5
-  checksum: a42849835f767da1053a1492c1c2c1b516e61e1c030ad968074d293ed7472194681423a332616b0380233dbd0a098537e9c5f71e9760eadbd8e8cfe7bbbf8adb
+  checksum: 9337a5cad9a2d9c858cec8dcd6bb7af6fa8129c174157edcbe67d075bf46163f90e4061c0c64fb0caba2b416f2492442cc136627ebaf41e62ee54ef3639980eb
   languageName: node
   linkType: hard
 
-"@terra-money/terra.proto@npm:^0.1.7":
-  version: 0.1.7
-  resolution: "@terra-money/terra.proto@npm:0.1.7"
+"@terra-money/terra.proto@npm:~2.0.0":
+  version: 2.0.0
+  resolution: "@terra-money/terra.proto@npm:2.0.0"
   dependencies:
+    "@improbable-eng/grpc-web": ^0.14.1
     google-protobuf: ^3.17.3
     long: ^4.0.0
     protobufjs: ~6.11.2
-  checksum: c6ad15f559008e5159137aea6fa0b3edd8699b2638cfbe7361c3b53a523bcf7b1f92e2977f4f022532f61a5f57a74bdd3e3db7d3eb5b97df743106aa40764bd0
+  checksum: 6bd13988f6581aa96534ed1440784d3189ac82a0baab7d0244b9abe580ebf9caa552f6814d9d11a6d05fc9eb14ec9fefdbf8749f8e821b06105e35509e65dc56
   languageName: node
   linkType: hard
 
@@ -3423,12 +3447,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.24.0":
-  version: 0.24.0
-  resolution: "axios@npm:0.24.0"
+"axios@npm:^0.26.1":
+  version: 0.26.1
+  resolution: "axios@npm:0.26.1"
   dependencies:
-    follow-redirects: ^1.14.4
-  checksum: 468cf496c08a6aadfb7e699bebdac02851e3043d4e7d282350804ea8900e30d368daa6e3cd4ab83b8ddb5a3b1e17a5a21ada13fc9cebd27b74828f47a4236316
+    follow-redirects: ^1.14.8
+  checksum: d9eb58ff4bc0b36a04783fc9ff760e9245c829a5a1052ee7ca6013410d427036b1d10d04e7380c02f3508c5eaf3485b1ae67bd2adbfec3683704745c8d7a6e1a
   languageName: node
   linkType: hard
 
@@ -3738,6 +3762,13 @@ __metadata:
   version: 1.1.0
   resolution: "brorand@npm:1.1.0"
   checksum: 8a05c9f3c4b46572dec6ef71012b1946db6cae8c7bb60ccd4b7dd5a84655db49fe043ecc6272e7ef1f69dc53d6730b9e2a3a03a8310509a3d797a618cbee52be
+  languageName: node
+  linkType: hard
+
+"browser-headers@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "browser-headers@npm:0.4.1"
+  checksum: 28b927dd90e4882eeb0625cd4a20a8e868f892144bca794a9b027fad9d2094656daf46473cb9084d650590504c581dd6a711146243035b66e75ade61bbe4d3cf
   languageName: node
   linkType: hard
 
@@ -5432,7 +5463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.4":
+"follow-redirects@npm:^1.14.8":
   version: 1.15.1
   resolution: "follow-redirects@npm:1.15.1"
   peerDependenciesMeta:
